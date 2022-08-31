@@ -9,8 +9,8 @@ import javax.persistence.*;
 @Data
 public class District {
     @Id
-    @GeneratedValue(generator = "District")
-    @SequenceGenerator(name="District", sequenceName = "DISTRICT_ID_SEQ")
+    @GeneratedValue(generator = "District", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name="District", sequenceName = "DISTRICT_ID_SEQ", initialValue = 1, allocationSize = 1)
     private Long id;
 
     @Column(name = "NAME", length = 100, nullable = false)
