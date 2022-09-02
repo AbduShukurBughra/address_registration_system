@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface NeighborhoodDao extends JpaRepository<Neighborhood, String> {
+public interface NeighborhoodDao extends JpaRepository<Neighborhood, Long> {
 }
