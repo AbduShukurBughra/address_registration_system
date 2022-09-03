@@ -1,9 +1,7 @@
 package com.address.service.entityservice;
 
-import com.address.entity.Address;
 import com.address.entity.Country;
-import com.address.repository.AddressDao;
-import com.address.repository.CountryDao;
+import com.address.dao.CountryDao;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

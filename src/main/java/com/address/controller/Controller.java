@@ -86,8 +86,8 @@ public class Controller {
     }
 
     //8. Mahalle adını güncellenebilmelidir.
-//9. Bir ilçeye ait mahalleler sorgulanabilmelidir.
-//10. Sokak kaydedilebilmelidir.
+    //9. Bir ilçeye ait mahalleler sorgulanabilmelidir.
+    //10. Sokak kaydedilebilmelidir.
     @PostMapping("/street")
     public String saveStreet(@RequestBody Street street) {
         streetEntityService.save(street);
@@ -96,8 +96,8 @@ public class Controller {
     }
 
     //11. Sokak adı güncellenebilmelidir.
-//12. Bir mahalleye ait sokaklar sorgulanabilmelidir.
-//13. Adres kaydedilebilmelidir.
+    //12. Bir mahalleye ait sokaklar sorgulanabilmelidir.
+    //13. Adres kaydedilebilmelidir.
     @PostMapping("/address")
     public String saveAddress(@RequestBody Address address) {
         addressEntityService.save(address);

@@ -1,4 +1,4 @@
-package com.address.repository;
+package com.address.dao;
 
 import com.address.entity.Address;
 import org.springframework.data.jpa.repository.JpaRepository;

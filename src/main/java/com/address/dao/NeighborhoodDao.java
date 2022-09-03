@@ -1,6 +1,5 @@
-package com.address.repository;
+package com.address.dao;
 
-import com.address.entity.District;
 import com.address.entity.Neighborhood;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
