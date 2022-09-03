@@ -4,7 +4,6 @@ package com.address.controller;
 import com.address.entity.*;
 import com.address.service.entityservice.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -41,13 +40,13 @@ public class Controller {
 
     //2. Ülke kodundan ülke sorgulanabilmelidir.
     @GetMapping("/country/{id}")
-    public Optional getCountryById(Long id){
+    public Optional getCountryById(Long id) {
         Optional country = countryEntityService.getCountryById(id);
         return country;
     }
 
 
-//3. Şehir kaydedilebilmelidir.
+    //3. Şehir kaydedilebilmelidir.
     @PostMapping("/city")
     public String saveCity(@RequestBody City city) {
         cityEntityService.save(city);
@@ -58,12 +57,12 @@ public class Controller {
 
     //4. Plakadan şehir bilgisi sorgulanabilmelidir.
     @GetMapping("/city/{plate}")
-    public Optional getCityByPlate(String plate){
+    public Optional getCityByPlate(String plate) {
         Optional city = cityEntityService.getCityByPlate(plate);
         return city;
     }
 
-//5. İlçe kaydedilebilmelidir.
+    //5. İlçe kaydedilebilmelidir.
     @PostMapping("/district")
     public String saveDistrict(@RequestBody District district) {
         districtEntityService.save(district);
@@ -73,11 +72,12 @@ public class Controller {
 
     //6. Bir ile ait ilçeler sorgulanabilmelidir.
     @GetMapping("/district/{city_id}")
-    public List<District> getDistrictByCityId(Integer cityId){
+    public List<District> getDistrictByCityId(Integer cityId) {
         List<District> districtList = districtEntityService.getDistrictsByCityId(cityId);
         return districtList;
     }
-//7. Mahalle kaydedilebilmelidir.
+
+    //7. Mahalle kaydedilebilmelidir.
     @PostMapping("/neighborhood")
     public String saveNeighborhood(@RequestBody Neighborhood neighborhood) {
         neighborhoodEntityService.save(neighborhood);
