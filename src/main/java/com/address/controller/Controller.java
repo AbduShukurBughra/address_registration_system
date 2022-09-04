@@ -6,7 +6,6 @@ import com.address.service.entityservice.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -121,6 +120,12 @@ public class Controller {
 
 //14. Adres silinebilmelidir.
 //15. Id den adres bilgisi edinilebilmelidir.
+@GetMapping("/address/{id}")
+public List<Address> getAddressById(Long id){
+    List<Address> addressList = addressEntityService.getAddressById(id);
+    return addressList;
+}
+
 }
 
 
