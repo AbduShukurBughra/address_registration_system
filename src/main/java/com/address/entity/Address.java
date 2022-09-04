@@ -14,7 +14,7 @@ public class Address {
     private Long id;
 
     @Column(name = "ID_STREET", length = 100, nullable = false)
-    private Integer id_street;
+    private Integer idStreet;
 
     @Column(name = "DOOR_NUMBER", length = 100, nullable = false)
     private Integer doorNumber;

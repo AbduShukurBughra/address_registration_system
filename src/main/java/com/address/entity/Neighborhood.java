@@ -17,6 +17,6 @@ public class Neighborhood {
     private String name;
 
     @Column(name = "ID_DISTRICT", length = 100, nullable = false)
-    private Integer id_district;
+    private Integer idDistrict;
 
 }

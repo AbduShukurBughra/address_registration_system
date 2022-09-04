@@ -20,5 +20,5 @@ public class City {
     private String plate;
 
     @Column(name = "ID_COUNTRY", length = 100, nullable = false)
-    private Integer id_country;
+    private Integer idCountry;
 }
