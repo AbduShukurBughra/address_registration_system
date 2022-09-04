@@ -105,6 +105,12 @@ public class Controller {
 
     //11. Sokak adı güncellenebilmelidir.
     //12. Bir mahalleye ait sokaklar sorgulanabilmelidir.
+    @GetMapping("/street/{id_Neighborhood}")
+    public List<Street> getStreetById(Integer neighborhoodId){
+        List<Street> streetList = streetEntityService.getStrretById(neighborhoodId);
+        return streetList;
+    }
+
     //13. Adres kaydedilebilmelidir.
     @PostMapping("/address")
     public String saveAddress(@RequestBody Address address) {
