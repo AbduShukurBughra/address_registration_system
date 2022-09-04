@@ -17,5 +17,5 @@ public class Street {
     private String name;
 
     @Column(name = "ID_NEIGHBORHOOD", length = 100, nullable = false)
-    private Integer id_neighborhood;
+    private Integer idNeighborhood;
 }

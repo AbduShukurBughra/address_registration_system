@@ -6,6 +6,7 @@ import com.address.service.entityservice.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -87,6 +88,13 @@ public class Controller {
 
     //8. Mahalle adını güncellenebilmelidir.
     //9. Bir ilçeye ait mahalleler sorgulanabilmelidir.
+   @GetMapping("/neighborhood/{id_district}")
+    public List<Neighborhood> getNeighborhoodById(Integer districtId){
+        List<Neighborhood> neighborhoodList = neighborhoodEntityService.getNeighborhoodById(districtId);
+        return neighborhoodList;
+    }
+
+
     //10. Sokak kaydedilebilmelidir.
     @PostMapping("/street")
     public String saveStreet(@RequestBody Street street) {

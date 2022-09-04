@@ -14,19 +14,19 @@ public class AddressAlternative {
     private Long id;
 
     @Column(name = "ID_COUNTRY", length = 100, nullable = false)
-    private Integer id_country;
+    private Integer idCountry;
 
     @Column(name = "ID_CITY", length = 100, nullable = false)
-    private Integer id_city;
+    private Integer idCity;
 
     @Column(name = "ID_DISTRICT", length = 100, nullable = false)
-    private Integer id_district;
+    private Integer idDistrict;
 
     @Column(name = "ID_NEIGHBORHOOD", length = 100, nullable = false)
-    private Integer id_neighborhood;
+    private Integer idNeighborhood;
 
     @Column(name = "ID_STREET", length = 100, nullable = false)
-    private Integer id_street;
+    private Integer idStreet;
 
     @Column(name = "DOOR_NUMBER", length = 100, nullable = false)
     private Integer doorNumber;
