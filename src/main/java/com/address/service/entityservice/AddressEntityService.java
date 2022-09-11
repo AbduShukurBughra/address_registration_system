@@ -20,4 +20,8 @@ public class AddressEntityService {
         List<Address> addressesList = addressDao.findAllById(Collections.singleton(id));
         return addressesList;
     }
+
+    public void delete(Long id) {
+        addressDao.deleteById(id);
+    }
 }

@@ -1,6 +1,7 @@
 package com.address.controller;
 
 
+import com.address.dto.NeighborhoodDto;
 import com.address.entity.*;
 import com.address.service.entityservice.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,9 +87,14 @@ public class Controller {
     }
 
     //8. Mahalle adını güncellenebilmelidir.
+    @PutMapping("/neighborhood/{id}")
+    public String updateNeighborhood(@PathVariable Long id, @RequestBody Neighborhood neighborhood){
+        neighborhoodEntityService.updateNeighborhood(id, neighborhood);
+        return "idsi "+id+" olan malalle adi guncellendi.";
+    }
     //9. Bir ilçeye ait mahalleler sorgulanabilmelidir.
    @GetMapping("/neighborhood/{id_district}")
-    public List<Neighborhood> getNeighborhoodById(Integer districtId){
+    public List<Neighborhood> getNeighborhoodById(@PathVariable Integer districtId){
         List<Neighborhood> neighborhoodList = neighborhoodEntityService.getNeighborhoodById(districtId);
         return neighborhoodList;
     }
@@ -103,10 +109,16 @@ public class Controller {
     }
 
     //11. Sokak adı güncellenebilmelidir.
+    @PutMapping("/street/{id}")
+    public String updateStreet(@PathVariable Long id, @RequestBody Street street){
+        streetEntityService.updateStreet(id, street);
+        return "idsi "+id+" olan sokak adi guncellendi.";
+    }
+
     //12. Bir mahalleye ait sokaklar sorgulanabilmelidir.
     @GetMapping("/street/{id_Neighborhood}")
-    public List<Street> getStreetById(Integer neighborhoodId){
-        List<Street> streetList = streetEntityService.getStrretById(neighborhoodId);
+    public List<Street> getStreetById(Integer streetId){
+        List<Street> streetList = streetEntityService.getStreetById(streetId);
         return streetList;
     }
 
@@ -119,12 +131,28 @@ public class Controller {
     }
 
 //14. Adres silinebilmelidir.
+    @DeleteMapping("/address/{id}")
+    public String deleteAddress(@PathVariable Long id) {
+        addressEntityService.delete(id);
+        return "address deleted...";
+    }
+
+
+
 //15. Id den adres bilgisi edinilebilmelidir.
 @GetMapping("/address/{id}")
 public List<Address> getAddressById(Long id){
     List<Address> addressList = addressEntityService.getAddressById(id);
     return addressList;
 }
+//DTO example
+@PostMapping("/neighborhoodDto")
+public String saveNeighborhoodDto(@RequestBody NeighborhoodDto neighborhoodDto) {
+    neighborhoodEntityService.saveDto(neighborhoodDto);
+    String neighborhoodName = neighborhoodDto.getName();
+    return neighborhoodName + " Adli Mahelle kaydedildi.";
+}
+
 
 }
 
