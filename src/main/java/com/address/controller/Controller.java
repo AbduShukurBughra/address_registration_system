@@ -36,7 +36,6 @@ public class Controller {
         countryEntityService.save(country);
         String cityName = country.getName();
         return cityName + " Adindaki Ulke kaydedildi.";
-
     }
 
     //2. Ülke kodundan ülke sorgulanabilmelidir.
@@ -45,7 +44,6 @@ public class Controller {
         Optional country = countryEntityService.getCountryById(id);
         return country;
     }
-
 
     //3. Şehir kaydedilebilmelidir.
     @PostMapping("/city")
@@ -116,9 +114,9 @@ public class Controller {
     }
 
     //12. Bir mahalleye ait sokaklar sorgulanabilmelidir.
-    @GetMapping("/street/{id_Neighborhood}")
-    public List<Street> getStreetById(Integer streetId){
-        List<Street> streetList = streetEntityService.getStreetById(streetId);
+    @GetMapping("/street/byNeighborhoodId/{id_Neighborhood}")
+    public List<Street> getStreetByNId(Integer nId){
+        List<Street> streetList = streetEntityService.getStreetByNId(nId);
         return streetList;
     }
 

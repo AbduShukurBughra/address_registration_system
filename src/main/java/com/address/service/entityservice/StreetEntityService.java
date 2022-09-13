@@ -17,8 +17,8 @@ public class StreetEntityService {
         streetDao.save(street);
     }
 
-    public List<Street> getStreetById(Integer streetId) {
-        List<Street> streetList = streetDao.findAllByIdStreet(streetId);
+    public List<Street> getStreetByNId(Integer nId) {
+        List<Street> streetList = streetDao.findAllByIdNeighborhood(nId);
                 return streetList;
     }
 

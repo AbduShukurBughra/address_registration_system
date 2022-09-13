@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Repository
 public interface StreetDao extends JpaRepository<Street, Long> {
-    List<Street> findAllByIdStreet(Integer neighborhoodId);
+    List<Street> findAllByIdNeighborhood(Integer nId);
 
     Optional<Street> findStreetById(Long id);
 }
